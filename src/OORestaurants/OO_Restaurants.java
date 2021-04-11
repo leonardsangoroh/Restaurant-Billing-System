@@ -5,8 +5,12 @@
  */
 package OORestaurants;
 
+import java.awt.Component;
 import javax.swing.JTextArea;
 import java.awt.TextField;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import javax.swing.JTextField;
 
 
 /**
@@ -38,13 +42,13 @@ public class OO_Restaurants extends javax.swing.JFrame {
         jbtnExit = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        jtxtReceipt = new javax.swing.JTextArea();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        jtxtTax = new javax.swing.JTextField();
+        jtxtSubTotal = new javax.swing.JTextField();
+        jtxtTotal = new javax.swing.JTextField();
         jlblTax = new javax.swing.JLabel();
         jlblSubTotal = new javax.swing.JLabel();
         jlblTotal = new javax.swing.JLabel();
@@ -52,20 +56,20 @@ public class OO_Restaurants extends javax.swing.JFrame {
         jlblCostOfMeal = new javax.swing.JLabel();
         jlblCostOfDrinks = new javax.swing.JLabel();
         jlblTotalCostOfMeal = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
+        jtxtCostOfMeal = new javax.swing.JTextField();
+        jtxtCostOfDrinks = new javax.swing.JTextField();
+        jtxtTotalCostOfMeal = new javax.swing.JTextField();
         jPanel6 = new javax.swing.JPanel();
         jlblFiletOFish = new javax.swing.JLabel();
         jlblChickenBurger = new javax.swing.JLabel();
         jlblChickenLegend = new javax.swing.JLabel();
         jlblChickenBurgerMeal = new javax.swing.JLabel();
         jlblBaconCheeseBurger = new javax.swing.JLabel();
-        jTextField12 = new javax.swing.JTextField();
-        jTextField13 = new javax.swing.JTextField();
-        jTextField14 = new javax.swing.JTextField();
-        jTextField15 = new javax.swing.JTextField();
-        jTextField16 = new javax.swing.JTextField();
+        jtxtBaconCheeseBurger = new javax.swing.JTextField();
+        jtxtChickenBurgerMeal = new javax.swing.JTextField();
+        jtxtChickenLegend = new javax.swing.JTextField();
+        jtxtChickenBurger = new javax.swing.JTextField();
+        jtxtFiletOFish = new javax.swing.JTextField();
         jlblTax3 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         jlblTax2 = new javax.swing.JLabel();
@@ -74,11 +78,11 @@ public class OO_Restaurants extends javax.swing.JFrame {
         jlblVanillaMilkShake = new javax.swing.JLabel();
         jlblClassicVanilla = new javax.swing.JLabel();
         jlblChocolateMilkShake = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
-        jTextField9 = new javax.swing.JTextField();
-        jTextField10 = new javax.swing.JTextField();
-        jTextField11 = new javax.swing.JTextField();
+        jtxtChocolateMilkShake = new javax.swing.JTextField();
+        jtxtClassicVanilla = new javax.swing.JTextField();
+        jtxtVanillaCone = new javax.swing.JTextField();
+        jtxtVanillaMilkShake = new javax.swing.JTextField();
+        jtxtMilkShake = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -87,15 +91,35 @@ public class OO_Restaurants extends javax.swing.JFrame {
 
         jbtnTotal.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         jbtnTotal.setText("Total");
+        jbtnTotal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnTotalActionPerformed(evt);
+            }
+        });
 
         jbtnReceipt.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         jbtnReceipt.setText("Receipt");
+        jbtnReceipt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnReceiptActionPerformed(evt);
+            }
+        });
 
         jbtnReset.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         jbtnReset.setText("Reset");
+        jbtnReset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnResetActionPerformed(evt);
+            }
+        });
 
         jbtnExit.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         jbtnExit.setText("Exit");
+        jbtnExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnExitActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -128,9 +152,9 @@ public class OO_Restaurants extends javax.swing.JFrame {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102), 12));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        jtxtReceipt.setColumns(20);
+        jtxtReceipt.setRows(5);
+        jScrollPane1.setViewportView(jtxtReceipt);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -177,11 +201,11 @@ public class OO_Restaurants extends javax.swing.JFrame {
 
         jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102), 12));
 
-        jTextField1.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        jtxtTax.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
 
-        jTextField2.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        jtxtSubTotal.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
 
-        jTextField3.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        jtxtTotal.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
 
         jlblTax.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         jlblTax.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -205,12 +229,12 @@ public class OO_Restaurants extends javax.swing.JFrame {
                     .addComponent(jlblTotal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jlblSubTotal, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
                     .addComponent(jlblTax, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(144, 144, 144))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jtxtSubTotal, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                    .addComponent(jtxtTax)
+                    .addComponent(jtxtTotal))
+                .addContainerGap(64, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -219,14 +243,14 @@ public class OO_Restaurants extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtxtTax, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jlblTax))
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jtxtSubTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jlblSubTotal))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtxtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jlblTotal))
                 .addContainerGap(68, Short.MAX_VALUE))
         );
@@ -237,7 +261,7 @@ public class OO_Restaurants extends javax.swing.JFrame {
 
         jlblCostOfMeal.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         jlblCostOfMeal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jlblCostOfMeal.setText("Cost of meal");
+        jlblCostOfMeal.setText("Cost of Meal");
 
         jlblCostOfDrinks.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         jlblCostOfDrinks.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -245,30 +269,30 @@ public class OO_Restaurants extends javax.swing.JFrame {
 
         jlblTotalCostOfMeal.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         jlblTotalCostOfMeal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jlblTotalCostOfMeal.setText("Total cost of meal");
+        jlblTotalCostOfMeal.setText("Total cost (Meal + Drinks)");
 
-        jTextField4.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        jtxtCostOfMeal.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
 
-        jTextField5.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        jtxtCostOfDrinks.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
 
-        jTextField6.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        jtxtTotalCostOfMeal.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addGap(54, 54, 54)
+                .addGap(40, 40, 40)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jlblTotalCostOfMeal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jlblCostOfDrinks, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jlblCostOfMeal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(87, 87, 87))
+                    .addComponent(jtxtCostOfMeal, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
+                    .addComponent(jtxtCostOfDrinks)
+                    .addComponent(jtxtTotalCostOfMeal))
+                .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -278,13 +302,13 @@ public class OO_Restaurants extends javax.swing.JFrame {
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jlblCostOfMeal)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jtxtCostOfMeal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jtxtCostOfDrinks, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jlblCostOfDrinks))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtxtTotalCostOfMeal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jlblTotalCostOfMeal))
                 .addContainerGap(64, Short.MAX_VALUE))
         );
@@ -313,33 +337,33 @@ public class OO_Restaurants extends javax.swing.JFrame {
         jlblBaconCheeseBurger.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jlblBaconCheeseBurger.setText("Bacon and Cheese Burger");
 
-        jTextField12.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
-        jTextField12.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        jTextField12.setText("0");
+        jtxtBaconCheeseBurger.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        jtxtBaconCheeseBurger.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        jtxtBaconCheeseBurger.setText("0");
 
-        jTextField13.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
-        jTextField13.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        jTextField13.setText("0");
-        jTextField13.addActionListener(new java.awt.event.ActionListener() {
+        jtxtChickenBurgerMeal.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        jtxtChickenBurgerMeal.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        jtxtChickenBurgerMeal.setText("0");
+        jtxtChickenBurgerMeal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField13ActionPerformed(evt);
+                jtxtChickenBurgerMealActionPerformed(evt);
             }
         });
 
-        jTextField14.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
-        jTextField14.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        jTextField14.setText("0");
+        jtxtChickenLegend.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        jtxtChickenLegend.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        jtxtChickenLegend.setText("0");
 
-        jTextField15.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
-        jTextField15.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        jTextField15.setText("0");
+        jtxtChickenBurger.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        jtxtChickenBurger.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        jtxtChickenBurger.setText("0");
 
-        jTextField16.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
-        jTextField16.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        jTextField16.setText("0");
-        jTextField16.addActionListener(new java.awt.event.ActionListener() {
+        jtxtFiletOFish.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        jtxtFiletOFish.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        jtxtFiletOFish.setText("0");
+        jtxtFiletOFish.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField16ActionPerformed(evt);
+                jtxtFiletOFishActionPerformed(evt);
             }
         });
 
@@ -363,11 +387,11 @@ public class OO_Restaurants extends javax.swing.JFrame {
                             .addComponent(jlblBaconCheeseBurger, javax.swing.GroupLayout.Alignment.LEADING))
                         .addGap(36, 36, 36)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField13)
-                            .addComponent(jTextField12)
-                            .addComponent(jTextField14)
-                            .addComponent(jTextField15)
-                            .addComponent(jTextField16, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)))
+                            .addComponent(jtxtChickenBurgerMeal)
+                            .addComponent(jtxtBaconCheeseBurger)
+                            .addComponent(jtxtChickenLegend)
+                            .addComponent(jtxtChickenBurger)
+                            .addComponent(jtxtFiletOFish, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGap(192, 192, 192)
                         .addComponent(jlblTax3)))
@@ -381,22 +405,22 @@ public class OO_Restaurants extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlblFiletOFish, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtxtFiletOFish, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlblChickenBurger, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtxtChickenBurger, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlblChickenLegend, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtxtChickenLegend, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlblChickenBurgerMeal, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtxtChickenBurgerMeal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtxtBaconCheeseBurger, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jlblBaconCheeseBurger, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(33, Short.MAX_VALUE))
         );
@@ -424,33 +448,33 @@ public class OO_Restaurants extends javax.swing.JFrame {
         jlblChocolateMilkShake.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         jlblChocolateMilkShake.setText("Chocolate Milk Shake");
 
-        jTextField7.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
-        jTextField7.setText("0");
+        jtxtChocolateMilkShake.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        jtxtChocolateMilkShake.setText("0");
 
-        jTextField8.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
-        jTextField8.setText("0");
-        jTextField8.addActionListener(new java.awt.event.ActionListener() {
+        jtxtClassicVanilla.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        jtxtClassicVanilla.setText("0");
+        jtxtClassicVanilla.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField8ActionPerformed(evt);
+                jtxtClassicVanillaActionPerformed(evt);
             }
         });
 
-        jTextField9.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
-        jTextField9.setText("0");
+        jtxtVanillaCone.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        jtxtVanillaCone.setText("0");
 
-        jTextField10.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
-        jTextField10.setText("0");
-        jTextField10.addActionListener(new java.awt.event.ActionListener() {
+        jtxtVanillaMilkShake.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        jtxtVanillaMilkShake.setText("0");
+        jtxtVanillaMilkShake.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField10ActionPerformed(evt);
+                jtxtVanillaMilkShakeActionPerformed(evt);
             }
         });
 
-        jTextField11.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
-        jTextField11.setText("0");
-        jTextField11.addActionListener(new java.awt.event.ActionListener() {
+        jtxtMilkShake.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        jtxtMilkShake.setText("0");
+        jtxtMilkShake.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField11ActionPerformed(evt);
+                jtxtMilkShakeActionPerformed(evt);
             }
         });
 
@@ -474,11 +498,11 @@ public class OO_Restaurants extends javax.swing.JFrame {
                             .addComponent(jlblMilkShake, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(33, 33, 33)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField11, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
-                            .addComponent(jTextField9)
-                            .addComponent(jTextField8)
-                            .addComponent(jTextField10)
-                            .addComponent(jTextField7))))
+                            .addComponent(jtxtMilkShake, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
+                            .addComponent(jtxtVanillaCone)
+                            .addComponent(jtxtClassicVanilla)
+                            .addComponent(jtxtVanillaMilkShake)
+                            .addComponent(jtxtChocolateMilkShake))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
@@ -489,23 +513,23 @@ public class OO_Restaurants extends javax.swing.JFrame {
                 .addGap(27, 27, 27)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlblMilkShake, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtxtMilkShake, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlblVanillaCone, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtxtVanillaCone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(16, 16, 16)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlblClassicVanilla, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtxtClassicVanilla, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlblVanillaMilkShake, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtxtVanillaMilkShake, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(16, 16, 16)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlblChocolateMilkShake, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtxtChocolateMilkShake, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
@@ -515,25 +539,146 @@ public class OO_Restaurants extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField10ActionPerformed
+    private void jtxtVanillaMilkShakeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtVanillaMilkShakeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField10ActionPerformed
+    }//GEN-LAST:event_jtxtVanillaMilkShakeActionPerformed
 
-    private void jTextField11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField11ActionPerformed
+    private void jtxtMilkShakeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtMilkShakeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField11ActionPerformed
+    }//GEN-LAST:event_jtxtMilkShakeActionPerformed
 
-    private void jTextField13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField13ActionPerformed
+    private void jtxtChickenBurgerMealActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtChickenBurgerMealActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField13ActionPerformed
+    }//GEN-LAST:event_jtxtChickenBurgerMealActionPerformed
 
-    private void jTextField16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField16ActionPerformed
+    private void jtxtFiletOFishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtFiletOFishActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField16ActionPerformed
+    }//GEN-LAST:event_jtxtFiletOFishActionPerformed
 
-    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
+    private void jtxtClassicVanillaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtClassicVanillaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField8ActionPerformed
+    }//GEN-LAST:event_jtxtClassicVanillaActionPerformed
+
+    private void jbtnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnExitActionPerformed
+       
+        SubClass_Child iExit = new SubClass_Child();
+        
+        iExit.iExitSystem();
+        
+    }//GEN-LAST:event_jbtnExitActionPerformed
+
+    private void jbtnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnResetActionPerformed
+        JTextField cleartext = null;
+        
+        for (Component c: jPanel6.getComponents()) {
+            if (c.getClass().toString().contains("javax.swing.JTextField")) {
+                cleartext = (JTextField)c;
+                cleartext.setText("0");
+            }
+        }
+        
+        for (Component c: jPanel7.getComponents()) {
+            if (c.getClass().toString().contains("javax.swing.JTextField")) {
+                cleartext = (JTextField)c;
+                cleartext.setText("0");
+            }
+        }
+        
+        for (Component c: jPanel4.getComponents()) {
+            if (c.getClass().toString().contains("javax.swing.JTextField")) {
+                cleartext = (JTextField)c;
+                cleartext.setText("");
+            }
+        }
+        
+        for (Component c: jPanel5.getComponents()) {
+            if (c.getClass().toString().contains("javax.swing.JTextField")) {
+                cleartext = (JTextField)c;
+                cleartext.setText("");
+            }
+        }
+        
+        jtxtReceipt.setText(null);
+    }//GEN-LAST:event_jbtnResetActionPerformed
+
+    private void jbtnTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnTotalActionPerformed
+        SubClass_Child ItemCost = new SubClass_Child();
+        
+        double iTax, iSubTotal, iTotal;
+        
+        ItemCost.FiletOFish = ItemCost.pFiletOFish * Double.parseDouble(jtxtFiletOFish.getText());
+        ItemCost.ChickenBurger = ItemCost.pChickenBurger * Double.parseDouble(jtxtChickenBurger.getText());
+        ItemCost.ChickenLegend = ItemCost.pChickenLegend * Double.parseDouble(jtxtChickenLegend.getText());
+        ItemCost.ChickenBurgerMeal = ItemCost.pChickenBurgerMeal * Double.parseDouble(jtxtChickenBurgerMeal.getText());
+        ItemCost.BaconCheeseBurger = ItemCost.pBaconCheeseBurger * Double.parseDouble(jtxtBaconCheeseBurger.getText());
+        ItemCost.MilkShake = ItemCost.pMilkShake * Double.parseDouble(jtxtMilkShake.getText());
+        ItemCost.VanillaCone = ItemCost.pVanillaCone * Double.parseDouble(jtxtVanillaCone.getText());
+        ItemCost.ClassicVanilla = ItemCost.pClassicVanilla * Double.parseDouble(jtxtClassicVanilla.getText());
+        ItemCost.VanillaMilkShake = ItemCost.pVanillaMilkShake * Double.parseDouble(jtxtVanillaMilkShake.getText());
+        ItemCost.ChocolateMilkShake = ItemCost.pChocolateMilkShake * Double.parseDouble(jtxtChocolateMilkShake.getText());
+        
+        iSubTotal = ItemCost.GetAmount();
+        
+        iTax = ItemCost.cFindTax(iSubTotal);
+        
+        iTotal = iSubTotal + iTax;
+        
+        String SubTotal = String.format("Kshs %.2f", iSubTotal);
+        jtxtSubTotal.setText(SubTotal);
+        
+        String Ttotal = String.format("Kshs %.2f", iTotal);
+        jtxtTotal.setText(Ttotal);
+        
+        String Ttax = String.format("Kshs %.2f", iTax);
+        jtxtTax.setText(Ttax);
+        
+        String Meals = String.format("Kshs %.2f", ItemCost.Meals);
+        jtxtCostOfMeal.setText(Meals);
+        
+        String Drinks = String.format("Kshs %.2f", ItemCost.Drinks);
+        jtxtCostOfDrinks.setText(Drinks);
+        
+        String Tttotal = String.format("Kshs %.2f", ItemCost.TotalofMD);
+        jtxtTotalCostOfMeal.setText(Tttotal);
+
+        
+    }//GEN-LAST:event_jbtnTotalActionPerformed
+
+    private void jbtnReceiptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnReceiptActionPerformed
+        
+        /////////////////////////////////////////////////////////////////////
+        
+        int refs = 1325 + (int) (Math.random() * 4238);
+        
+        ////////////////////////////////////////////////////////////////////
+        
+        Calendar timer = Calendar.getInstance();
+        timer.getTime();
+        
+        SimpleDateFormat tTime = new SimpleDateFormat("HH:mm:ss");
+        tTime.format(timer.getTime());
+        
+        SimpleDateFormat Tdate = new SimpleDateFormat("dd-MMM-yyyy");
+        Tdate.format(timer.getTime());
+        
+        
+        
+        jtxtReceipt.append("\tRestaurant Billing System:\n" + 
+                "Reference: \t\t\t" + refs + 
+        "\n=====================================\n" +
+                "Meals:\t\t" + jtxtCostOfMeal.getText() + "\n\n" +
+                "Drinks:\t\t" + jtxtCostOfDrinks.getText() + "\n\n" +
+                "Total (Meal+ Drinks) :\t" + jtxtTotalCostOfMeal.getText() + "\n\n" +
+        "=======================================" + "\n\n" +
+                "Tax:\t\t" + jtxtTax.getText() + "\n\n" + 
+                   "SubTotal:\t" + jtxtSubTotal.getText() + "\n\n" +
+                    "Total:\t\t" + jtxtTotal.getText() + "\n\n" +
+        "=======================================" + 
+        "\nDate: " + Tdate.format(timer.getTime()) +
+             "\tTime: " + tTime.format(timer.getTime()) +
+        "\n\n THANK YOU FOR COMING TO LEO'S RESTAURANT"
+        );
+    }//GEN-LAST:event_jbtnReceiptActionPerformed
 
     /**
      * @param args the command line arguments
@@ -580,23 +725,6 @@ public class OO_Restaurants extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField15;
-    private javax.swing.JTextField jTextField16;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
     private javax.swing.JButton jbtnExit;
     private javax.swing.JButton jbtnReceipt;
     private javax.swing.JButton jbtnReset;
@@ -619,5 +747,22 @@ public class OO_Restaurants extends javax.swing.JFrame {
     private javax.swing.JLabel jlblTotalCostOfMeal;
     private javax.swing.JLabel jlblVanillaCone;
     private javax.swing.JLabel jlblVanillaMilkShake;
+    private javax.swing.JTextField jtxtBaconCheeseBurger;
+    private javax.swing.JTextField jtxtChickenBurger;
+    private javax.swing.JTextField jtxtChickenBurgerMeal;
+    private javax.swing.JTextField jtxtChickenLegend;
+    private javax.swing.JTextField jtxtChocolateMilkShake;
+    private javax.swing.JTextField jtxtClassicVanilla;
+    private javax.swing.JTextField jtxtCostOfDrinks;
+    private javax.swing.JTextField jtxtCostOfMeal;
+    private javax.swing.JTextField jtxtFiletOFish;
+    private javax.swing.JTextField jtxtMilkShake;
+    private javax.swing.JTextArea jtxtReceipt;
+    private javax.swing.JTextField jtxtSubTotal;
+    private javax.swing.JTextField jtxtTax;
+    private javax.swing.JTextField jtxtTotal;
+    private javax.swing.JTextField jtxtTotalCostOfMeal;
+    private javax.swing.JTextField jtxtVanillaCone;
+    private javax.swing.JTextField jtxtVanillaMilkShake;
     // End of variables declaration//GEN-END:variables
 }

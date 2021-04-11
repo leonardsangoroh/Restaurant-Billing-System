@@ -9,6 +9,6 @@ package OORestaurants;
  *
  * @author leesangoroh
  */
-public class SubClass_Child {
+public class SubClass_Child extends SuperClass_Parent {
     
 }
